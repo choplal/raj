@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect
 from pymongo import MongoClient
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -9,6 +10,33 @@ db = client["choplaldb"]
 collection = db["users"]
 
 import json
+
+@app.route('/todo')
+def todo():
+    return '''
+    <h2>Add To-Do Item</h2>
+    <form method="POST" action="/submittodoitem">
+        Item Name: <input name="itemName" required><br><br>
+        Item Description: <input name="itemDescription" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    '''
+
+@app.route('/submittodoitem', methods=['POST'])
+def submit_todo():
+    try:
+        item_name = request.form['itemName']
+        item_desc = request.form['itemDescription']
+
+        collection.insert_one({
+            "itemName": item_name,
+            "itemDescription": item_desc
+        })
+
+        return "To-Do item saved successfully"
+
+    except Exception as e:
+        return f"Error: {str(e)}"
 
 @app.route('/api')
 def api():
