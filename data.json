@@ -1,0 +1,12 @@
+[
+  {"name": "Choplal", "role": "DevOps"},
+  {"name": "Samjhana", "role": "Physiotherapist"},
+  {"name": "Suman", "role": "Business Entrepreneur"},
+  {"name": "Ankit Kumar Tiwari", "role": "Full Stack Developer"},
+  {"name": "Assis", "role": "Big Boss"},
+  {"name": "Raj", "role": "Manager"},
+  {"name": "Satyarth", "role": "Data Scientist"},
+  {"name": "Shivam", "role": "Software Engineer"},
+  {"name": "Rohit", "role": "Product Manager"},
+  {"name": "Priya", "role": "UX Designer"}
+]
