@@ -21,7 +21,7 @@ app.post('/submit', async (req, res) => {
     const name = req.body.name;
 
     try {
-        const response = await axios.post('http://backend:5000/api', {
+        const response = await axios.post('http://13.201.44.180:5000/api', {
             name: name
         });
 
